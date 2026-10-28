@@ -1,69 +1,140 @@
-import Image from "next/image";
+const navigation = [
+  { label: "Work", href: "#work" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
+];
+
+const socialLinks = [
+  { label: "GitHub", href: "https://github.com/ahmad-wisal/" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/wisal-ahmad-17aab824/",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
+    <>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
+
+      <header className="site-header">
+        <div className="site-container header-inner">
+          <a className="wordmark" href="#" aria-label="Wisal Ahmad home">
+            WA<span aria-hidden="true">.</span>
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+          <nav aria-label="Primary navigation">
+            <ul className="nav-list">
+              {navigation.map((item) => (
+                <li key={item.href}>
+                  <a className="nav-link" href={item.href}>
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
+      </header>
+
+      <main id="main-content">
+        <section className="hero-section" aria-labelledby="hero-heading">
+          <div className="site-container hero-grid">
+            <div className="hero-copy">
+              <p className="eyebrow">
+                <span className="status-dot" aria-hidden="true" />
+                Islamabad / Rawalpindi, Pakistan
+              </p>
+              <h1 id="hero-heading">
+                Full-Stack Developer
+                <span className="hero-accent"> &amp; AI Integration</span>
+              </h1>
+              <p className="hero-intro">
+                I build thoughtful digital experiences where dependable
+                engineering and intelligent interfaces meet.
+              </p>
+              <div className="hero-actions">
+                <a className="button button-primary" href="#work">
+                  Explore the work <span aria-hidden="true">↘</span>
+                </a>
+                <a className="text-link" href="#contact">
+                  Let&apos;s connect <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="hero-signal" aria-hidden="true">
+              <div className="signal-ring signal-ring-outer" />
+              <div className="signal-ring signal-ring-inner" />
+              <div className="signal-core">WA</div>
+              <span className="signal-label signal-label-top">BUILD / 01</span>
+              <span className="signal-label signal-label-bottom">
+                IDEAS → SYSTEMS
+              </span>
+            </div>
+          </div>
+          <div className="hero-rule site-container" aria-hidden="true">
+            <span>01</span>
+            <span className="rule-line" />
+            <span>Scroll to discover</span>
+          </div>
+        </section>
+
+        <section className="content-section" id="work" aria-labelledby="work-heading">
+          <div className="site-container">
+            <div className="section-heading">
+              <p className="eyebrow">01 / Selected work</p>
+              <h2 id="work-heading">Proof over promises.</h2>
+            </div>
+            <div className="empty-panel">
+              <p className="panel-kicker">Portfolio in progress</p>
+              <p>
+                Project details will be published here once their public
+                content has been verified and approved.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="content-section content-section-muted" id="about" aria-labelledby="about-heading">
+          <div className="site-container split-section">
+            <div className="section-heading">
+              <p className="eyebrow">02 / Perspective</p>
+              <h2 id="about-heading">Built with clarity.</h2>
+            </div>
+            <p className="section-lede">
+              A developer portfolio should make the work easy to understand,
+              the details easy to trust, and the next step easy to find.
+            </p>
+          </div>
+        </section>
+
+        <section className="content-section contact-section" id="contact" aria-labelledby="contact-heading">
+          <div className="site-container contact-panel">
+            <div>
+              <p className="eyebrow">03 / Connect</p>
+              <h2 id="contact-heading">Have something worth building?</h2>
+            </div>
+            <div className="contact-links">
+              <p>Find me on</p>
+              {socialLinks.map((link) => (
+                <a className="contact-link" key={link.href} href={link.href}>
+                  {link.label} <span aria-hidden="true">↗</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
-    </div>
+
+      <footer className="site-footer">
+        <div className="site-container footer-inner">
+          <p>© Wisal Ahmad</p>
+          <p>Full-Stack Developer <span aria-hidden="true">·</span> AI Integration</p>
+        </div>
+      </footer>
+    </>
   );
 }
